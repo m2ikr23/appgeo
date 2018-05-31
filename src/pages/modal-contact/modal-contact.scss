@@ -1,3 +1,32 @@
 page-modal-contact {
 
+
+    .item-ios {
+        color: white;
+    background-color: rgba(0, 0, 0, 0.703)
+    }
+
+    .item-md {
+        color: white;
+    background-color: rgba(0, 0, 0, 0.703)
+    }
+    .social{
+        margin: 10px;
+    }
+
+    .redes{
+        margin-left: 20px;
+    }
+   
+    
+    ion-item-divider.item.item-divider.item-ios.item-divider-ios {
+    background-color: transparent;
+    }
+
+    ion-item-divider.item.item-divider.item-md.item-divider-md {
+        background-color: transparent;
+    }
+
+
+    
 }

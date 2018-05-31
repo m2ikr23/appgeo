@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,ViewController } from 'ionic-angular';
+import { ModalController} from 'ionic-angular';
+import { ModalContactPage } from '../modal-contact/modal-contact';
 
 /**
  * Generated class for the PopContacPage page.
@@ -15,11 +17,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PopContacPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public viewCtrl:ViewController, public modalCtrl:ModalController,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PopContacPage');
   }
+  public dismiss() {
+    this.viewCtrl.dismiss(null);
+  }
 
+  presentModal(){
+    let modal = this.modalCtrl.create(ModalContactPage);
+    modal.present();
+    this.dismiss();
+  }
 }

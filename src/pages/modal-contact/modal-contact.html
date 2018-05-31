@@ -6,19 +6,65 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Contactanos</ion-title>
-    <ion-buttons star>
-      <button ion-button (click)="dismiss()" >  <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon></button>
+  <ion-toolbar color="blue">
+    
+    <ion-buttons left>
+      <button ion-button (click)="dismiss()">
+        <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+      </button>
     </ion-buttons>
-  </ion-navbar>
+
+    <ion-title>Vigitrack</ion-title>
+
+    <ion-buttons end>
+     <button ion-button >
+        <ion-icon ios="ios-information-circle" md="md-information-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
 
 </ion-header>
 
 
-<ion-content padding>
-<form action="">
-  <ion-label>Nombre</ion-label>
-  <ion-input></ion-input>
-</form>
+<ion-content>
+  <ion-item>
+    <h5 align="center"> Siguenos en nuestras redes sociales </h5>
+    <ion-buttons class="redes">
+      <a class="social" href="http://">
+        <img width="50px" src="../../assets/icon/web-facebook-icon.png" alt="Facebook" srcset=""> </a>
+      <a class="social" href="http://">
+        <img width="50px" src="../../assets/icon/Instagram-icon.png" alt="Instagram" srcset="">
+      </a>
+      <a class="social" href="http://">
+        <img width="50px" src="../../assets/icon/twitter_icon.png" alt="twitter" srcset="">
+      </a>
+    </ion-buttons>
+  </ion-item>
+  <ion-item-divider ></ion-item-divider>
+  
+    <form #formulario="ngForm" (ngSubmit)="sendEmail(formulario)" >
+  
+       <ion-item ><h4 align="center">Contáctanos</h4></ion-item>
+
+    <ion-item>
+      <ion-input type="text" placeholder="Nombre" required name="nombre" [(ngModel)]="contact.nombre" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+     <ion-input type="email" placeholder="Correo electrónico" required name="correo" [(ngModel)]="contact.correo"  ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="tel" placeholder="Teléfono" required name="telefono"  [(ngModel)]="contact.telefono"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-textarea type="textarea" placeholder="Mensaje" required  name="mensaje" [(ngModel)]="contact.mensaje"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <button ion-button block type="submit" [disabled]="!formulario.valid" >Enviar</button>
+    </ion-item>
+
+    </form>
+   
 </ion-content>

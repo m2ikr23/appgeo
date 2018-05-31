@@ -1,7 +1,6 @@
 import { Component,OnInit,ViewChild, ElementRef } from '@angular/core';
 
-import { ModalController, PopoverController } from 'ionic-angular';
-import { ModalContactPage } from '../../pages/modal-contact/modal-contact';
+import {PopoverController } from 'ionic-angular';
 import { PopContacPage } from '../../pages/pop-contac/pop-contac';
 /**
  * Generated class for the CustomHeaderComponent component.
@@ -21,14 +20,11 @@ export class CustomHeaderComponent  implements OnInit  {
   @ViewChild('popoverContent', { read: ElementRef }) content: ElementRef;
   @ViewChild('popoverText', { read: ElementRef }) text: ElementRef;
   
-  constructor(public modalCtrl:ModalController, public popoverCtrl: PopoverController) {
+  constructor(public popoverCtrl: PopoverController) {
    
   }
 
-  presentModal(){
-    let modal = this.modalCtrl.create(ModalContactPage);
-    modal.present();
-  }
+ 
   presentPopover(myevent) {
     let popover = this.popoverCtrl.create(PopContacPage, {}, {
       cssClass: 'my-popover popover-class'
