@@ -1,0 +1,29 @@
+
+custom-header {
+.toolbar-ios{
+    padding-top:20px; 
+}
+.title-ios{
+    padding-top: 15px;
+}
+}
+
+
+
+
+.popover-ios .popover-content {
+
+  width: $popover-ios-width;
+  min-width: $popover-ios-min-width;
+  min-height: $popover-ios-min-height;
+  max-height: 40px;
+  padding: 0;
+  color: $popover-ios-text-color;
+}
+.popover-ios {
+
+    .item-ios {
+      @include padding-horizontal(0, null);
+        margin: 0;
+    }
+}
