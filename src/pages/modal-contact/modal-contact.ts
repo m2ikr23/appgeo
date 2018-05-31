@@ -2,12 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, ViewController, NavParams } from 'ionic-angular';
 import {NgForm} from '@angular/forms';
 
-/**
- * Generated class for the ModalContactPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import {EmailComposer} from '@ionic-native/email-composer'
+
 
 @IonicPage()
 @Component({
@@ -23,9 +19,11 @@ export class ModalContactPage {
     mensaje:""
   }
 
-  constructor(public viewCtrl: ViewController, public navParams: NavParams) {
+  constructor(public viewCtrl: ViewController, public navParams: NavParams, public emailCps:EmailComposer) {
+  
   }
 
+  
   ionViewDidLoad() {
     console.log('ionViewDidLoad ModalContactPage');
   }
@@ -33,8 +31,35 @@ export class ModalContactPage {
     this.viewCtrl.dismiss(null);
   }
 
+
 public sendEmail(formulario : NgForm){
-  console.log(this.contact);
+  
+  this.emailCps.isAvailable().then((available: boolean) =>{
+    if(available) {
+      let email = {
+        to: 'm2ikr23@gmail.com',
+        cc: this.contact.correo,
+        bcc: [],
+        attachments: [
+        ],
+        subject: 'Soporte Vigitrack',
+        body: '<p>'+this.contact.mensaje+'</p>'+'<p>'+ this.contact.nombre +'</p>'+'<p>'+ this.contact.nombre +'</p>',
+        isHtml: true
+      };
+      
+      this.emailCps.open(email);
+    }
+    else{
+      console.log('El mensaje no se envio');
+      this.dismiss();
+    }
+
+   });
+   
+  
   this.dismiss();
   }
+
+
+
 }
