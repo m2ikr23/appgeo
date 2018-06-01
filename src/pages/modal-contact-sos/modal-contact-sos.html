@@ -1,18 +1,50 @@
-<!--
-  Generated template for the ModalContactSosPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>modal-contact-sos</ion-title>
-  </ion-navbar>
+  <ion-toolbar color="blue">
+    
+    <ion-buttons left>
+      <button ion-button (click)="dismiss()">
+        <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>Vigitrack</ion-title>
+
+ 
+  </ion-toolbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  
+    <form #formulario="ngForm" (ngSubmit)="registrarContact(formulario)" >
+  
+       <ion-item ><h6 align="center">Registra tus contáctos de confianza </h6>
+      </ion-item>
 
-</ion-content>
+    <ion-item>
+      <ion-input type="text" placeholder="tu nombre" required name="nombre" [(ngModel)]="contact.nombre" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+     <ion-input type="email" placeholder="Tu número de teléfono " required name="telefono" [(ngModel)]= "contact.telefono" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="tel" placeholder="Teléfono de contacto 1" required name="contact1"  [(ngModel)]="contact.contact1"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="tel" placeholder="Teléfono de contacto 2"  name="contact2"  [(ngModel)]="contact.contact2"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="tel" placeholder="Teléfono de contacto 3"  name="contact3"  [(ngModel)]="contact.contact3"></ion-input>
+    </ion-item>
+    <ion-item>
+      <button ion-button block type="submit" [disabled]="!formulario.valid" >Enviar</button>
+    </ion-item>
+
+    </form>
+  </ion-content>

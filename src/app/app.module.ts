@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 
 import {EmailComposer} from '@ionic-native/email-composer'
+import { AndroidPermissions } from '@ionic-native/android-permissions';
+import { SMS } from '@ionic-native/sms';
 
 import { MyApp } from './app.component';
 import { CustomHeaderComponent } from './../components/custom-header/custom-header';
@@ -14,9 +16,11 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { ModalContactPage } from '../pages/modal-contact/modal-contact';
 import { ModalSosPage } from '../pages/modal-sos/modal-sos';
+import { ModalContactSosPage } from '../pages/modal-contact-sos/modal-contact-sos';
 import { PopContacPage} from '../pages/pop-contac/pop-contac';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ContactProvider } from '../providers/contact/contact';
 
 @NgModule({
   declarations: [
@@ -27,6 +31,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TabsPage,
     ModalContactPage,
     ModalSosPage,
+    ModalContactSosPage,
     PopContacPage,
     CustomHeaderComponent,
     
@@ -43,6 +48,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     ModalContactPage,
     ModalSosPage,
+    ModalContactSosPage,
     PopContacPage,
     TabsPage
 
@@ -52,6 +58,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     EmailComposer,
+    AndroidPermissions,
+    SMS,
+    ContactProvider,
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

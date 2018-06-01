@@ -11,8 +11,8 @@
       <ion-title>Vigitrack</ion-title>
   
       <ion-buttons end>
-       <button ion-button >
-          <ion-icon ios="ios-information-circle" md="md-information-circle"></ion-icon>
+       <button ion-button (click)="presentModal()" >
+          <ion-icon ios="ios-more" md="md-more"></ion-icon>
         </button>
       </ion-buttons>
     </ion-toolbar>
@@ -21,7 +21,7 @@
 
 <ion-content padding>
     <ion-fab>
-        <button ion-fab fab-size="200px"></button>
+        <button ion-fab fab-size="200px" (click)="sendSMS()"></button>
       </ion-fab>
       <div text-color-grey>
         <p>Presione el botón si te encuentras en una situación de emergencia</p>

@@ -84,4 +84,6 @@
     <engine name="ios" spec="~4.5.4" />
     <engine name="android" spec="~7.0.0" />
     <plugin name="cordova-plugin-email-composer" spec="^0.8.15" />
+    <plugin name="cordova-sms-plugin" spec="^0.1.11" />
+    <plugin name="cordova-plugin-android-permissions" spec="^1.0.0" />
 </widget>

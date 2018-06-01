@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, ViewController, NavParams } from 'ionic-angular';
+import { NgForm } from '@angular/forms';
 
 /**
  * Generated class for the ModalContactSosPage page.
@@ -14,12 +15,23 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'modal-contact-sos.html',
 })
 export class ModalContactSosPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  contact= {
+    nombre:"",
+    telefono:"",
+    contact1:"",
+    contact2:"",
+    contact3:"",
+  }
+  constructor(public viewCtrl: ViewController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ModalContactSosPage');
   }
+  registrarContact(formulario : NgForm){
 
+  }
+  public dismiss() {
+    this.viewCtrl.dismiss(null);
+  }
 }
