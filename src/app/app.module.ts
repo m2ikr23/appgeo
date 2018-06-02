@@ -20,7 +20,8 @@ import { ModalContactSosPage } from '../pages/modal-contact-sos/modal-contact-so
 import { PopContacPage} from '../pages/pop-contac/pop-contac';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { ContactProvider } from '../providers/contact/contact';
+import { ContactoServicio } from '../servicios/contacto.services';
+
 
 @NgModule({
   declarations: [
@@ -60,7 +61,7 @@ import { ContactProvider } from '../providers/contact/contact';
     EmailComposer,
     AndroidPermissions,
     SMS,
-    ContactProvider,
+    ContactoServicio,
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

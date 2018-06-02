@@ -6,6 +6,8 @@ import { ModalController} from 'ionic-angular';
 import { SMS } from '@ionic-native/sms';
 import { ModalContactSosPage } from '../../pages/modal-contact-sos/modal-contact-sos';
 
+import { ContactoServicio } from "../../servicios/contacto.services"
+
 @IonicPage()
 @Component({
   selector: 'page-modal-sos',
@@ -13,11 +15,17 @@ import { ModalContactSosPage } from '../../pages/modal-contact-sos/modal-contact
 })
 export class ModalSosPage {
 
-  constructor(private smsVar: SMS ,public viewCtrl: ViewController, public navParams: NavParams,public modalCtrl:ModalController) {
+  constructor(private smsVar: SMS ,public viewCtrl: ViewController, public navParams: NavParams,public modalCtrl:ModalController,public contactoS:ContactoServicio) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ModalSosPage');
+    let contactos = this.contactoS.obtenerContacto();
+    if (contactos==null){
+      this.presentModal();
+    }else{
+      console.log('no vacio');
+    }
+    
   }
   presentModal(){
     let modal = this.modalCtrl.create(ModalContactSosPage);

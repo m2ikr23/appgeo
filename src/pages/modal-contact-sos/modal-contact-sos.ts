@@ -1,13 +1,10 @@
+
 import { Component } from '@angular/core';
 import { IonicPage, ViewController, NavParams } from 'ionic-angular';
 import { NgForm } from '@angular/forms';
 
-/**
- * Generated class for the ModalContactSosPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { ContactoServicio } from "../../servicios/contacto.services"
+import { Contacto } from "../../model/contacto"
 
 @IonicPage()
 @Component({
@@ -15,21 +12,39 @@ import { NgForm } from '@angular/forms';
   templateUrl: 'modal-contact-sos.html',
 })
 export class ModalContactSosPage {
-  contact= {
-    nombre:"",
-    telefono:"",
-    contact1:"",
-    contact2:"",
-    contact3:"",
-  }
-  constructor(public viewCtrl: ViewController, public navParams: NavParams) {
+  contactos : Contacto[];
+
+  constructor(public viewCtrl: ViewController, public navParams: NavParams,public contactoS:ContactoServicio) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ModalContactSosPage');
+    if(this.contactoS.obtenerContacto()==null){
+      console.log('vacio');
+    }else{
+        console.log(this.contactoS.obtenerContacto());
+    }
+  
   }
   registrarContact(formulario : NgForm){
+    let nombre = formulario.value.nombre;
+    let telefono = formulario.value.telefono;
+    let contacto1 = formulario.value.contacto1;
+    let contacto2 = formulario.value.contacto2;
+    let contacto3 = formulario.value.contacto3;
+   
+    this.contactoS.agregarContacto(nombre,telefono,contacto1,contacto2,contacto3);
+    console.log(this.contactoS.obtenerContacto());
+    this.dismiss();
+  }
 
+  cargarcontactos(){
+    let fcontacto= this.contactoS.obtenerContacto()
+    if(fcontacto!=null){
+       return this.contactoS.obtenerContacto();
+    }else{
+      return "";
+    }
+   
   }
   public dismiss() {
     this.viewCtrl.dismiss(null);
