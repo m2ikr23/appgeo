@@ -27,10 +27,10 @@ export class ModalContactSosPage {
   }
   registrarContact(formulario : NgForm){
     let nombre = formulario.value.nombre;
-    let telefono = formulario.value.telefono;
-    let contacto1 = formulario.value.contacto1;
-    let contacto2 = formulario.value.contacto2;
-    let contacto3 = formulario.value.contacto3;
+    let telefono = String(formulario.value.telefono);
+    let contacto1 = String(formulario.value.contacto1);
+    let contacto2 = String(formulario.value.contacto2);
+    let contacto3 = String(formulario.value.contacto3);
    
     this.contactoS.agregarContacto(nombre,telefono,contacto1,contacto2,contacto3);
     console.log(this.contactoS.obtenerContacto());

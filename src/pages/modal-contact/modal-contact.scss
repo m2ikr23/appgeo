@@ -1,6 +1,12 @@
 page-modal-contact {
 
+    .scroll-content {
+        background: rgb(89, 133, 168);
+    }
 
+    ion-item.redes-content {
+        margin: 15% 0px 7px 0px;
+    }
     .item-ios {
         color: white;
     background-color: rgba(0, 0, 0, 0.703)
@@ -10,12 +16,14 @@ page-modal-contact {
         color: white;
     background-color: rgba(0, 0, 0, 0.703)
     }
-    .social{
+    .social {
         margin: 10px;
+        position: relative;
+      
     }
 
     .redes{
-        margin-left: 20px;
+        margin-top: 20px;
     }
    
     

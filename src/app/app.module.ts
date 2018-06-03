@@ -6,9 +6,10 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import {EmailComposer} from '@ionic-native/email-composer'
 import { AndroidPermissions } from '@ionic-native/android-permissions';
 import { SMS } from '@ionic-native/sms';
-
+import { IonicStorageModule } from '@ionic/storage';
 import { MyApp } from './app.component';
 import { CustomHeaderComponent } from './../components/custom-header/custom-header';
+import { Geolocation } from '@ionic-native/geolocation';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -39,7 +40,8 @@ import { ContactoServicio } from '../servicios/contacto.services';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -61,7 +63,9 @@ import { ContactoServicio } from '../servicios/contacto.services';
     EmailComposer,
     AndroidPermissions,
     SMS,
+    Geolocation,
     ContactoServicio,
+
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

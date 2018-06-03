@@ -27,21 +27,19 @@
 
 
 <ion-content>
-  <ion-item>
+  <ion-item class="redes-content">
     <h5 align="center"> Siguenos en nuestras redes sociales </h5>
-    <ion-buttons class="redes">
-      <a class="social" href="http://">
-        <img width="50px" src="../../assets/icon/web-facebook-icon.png" alt="Facebook" srcset=""> </a>
-      <a class="social" href="http://">
-        <img width="50px" src="../../assets/icon/Instagram-icon.png" alt="Instagram" srcset="">
+    <ion-buttons class="redes" align="center">
+      <a class="social" href="http://m.facebook.com/vigitrackavl" target="_blank">
+        <img width="50px" src="../../assets/icon/web-facebook-icon.png"  alt="Facebook" > </a>
+      <a class="social" href="https://www.instagram.com/vigitrack/" target="_blank">
+        <img width="50px" src="../../assets/icon/Instagram-icon.png"  alt="Instagram" >
       </a>
-      <a class="social" href="http://">
-        <img width="50px" src="../../assets/icon/twitter_icon.png" alt="twitter" srcset="">
+      <a class="social" href="https://twitter.com/Vigitrack" target="_blank" >
+        <img width="50px" src="../../assets/icon/twitter_icon.png" alt="twitter">
       </a>
     </ion-buttons>
-  </ion-item>
-  <ion-item-divider ></ion-item-divider>
-  
+  </ion-item>  
     <form #formulario="ngForm" (ngSubmit)="sendEmail(formulario)" >
   
        <ion-item ><h4 align="center">Contáctanos</h4></ion-item>
@@ -62,7 +60,7 @@
       <ion-textarea type="textarea" placeholder="Mensaje" required  name="mensaje" [(ngModel)]="contact.mensaje"></ion-textarea>
     </ion-item>
     <ion-item>
-      <button ion-button block type="submit" [disabled]="!formulario.valid" >Enviar</button>
+      <button ion-button block large type="submit" [disabled]="!formulario.valid" >Enviar</button>
     </ion-item>
 
     </form>

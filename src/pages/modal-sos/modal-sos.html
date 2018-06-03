@@ -8,7 +8,7 @@
         </button>
       </ion-buttons>
   
-      <ion-title>Vigitrack</ion-title>
+      <ion-title>Emergencia</ion-title>
   
       <ion-buttons end>
        <button ion-button (click)="presentModal()" >
@@ -21,10 +21,10 @@
 
 <ion-content padding>
     <ion-fab>
-        <button ion-fab fab-size="200px" (click)="sendSMS()"></button>
+        <button class="button-panic" ion-fab clear icon-only fab-size="200px" (click)="sendSMS()"><img class="button-panic-img" src="assets/imgs/panicboton.fw.png" alt="panic"></button>
       </ion-fab>
-      <div text-color-grey>
-        <p>Presione el botón si te encuentras en una situación de emergencia</p>
+      <div class="text_info">
+        <p class="text-info-text" align="center">Presione el botón si te encuentras en una situación de emergencia</p>
       </div>
       
 </ion-content>
