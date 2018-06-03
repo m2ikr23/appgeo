@@ -11,16 +11,26 @@ export class ContactoServicio{
     agregarContacto(nombre:string,telefono:string,
                         contacto1:string,contacto2:string,contacto3:string){
         let contacto=new Contacto(nombre,telefono,contacto1,contacto2,contacto3);
-
-        this.contactos.push(contacto);
+        if(this.contactos==null){
+             this.contactos.push(contacto);
+        }else{
+            this.contactos.shift();
+            this.contactos.push(contacto);
+        }             
+       
+        if(this.storage.get('contactos')==null){
+           this.storage.set('contactos',this.contactos); 
+        }else{
+            this.storage.remove('contactos');
+            this.storage.set('contactos',this.contactos);
+        }
         
-        this.storage.set('contactos',this.contactos);
 
     }
 
     obtenerContacto(){
         
-        return this.contactos.slice().shift();
+        return this.contactos.slice().pop();
     }
 
     cargarDatos(){
