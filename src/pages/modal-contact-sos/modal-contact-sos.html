@@ -36,11 +36,11 @@
     </ion-item>
 
     <ion-item>
-      <ion-input type="tel" placeholder="Teléfono de contacto 2" required name="contacto2" [ngModel]="cargarcontactos().contacto2"  ></ion-input>
+      <ion-input type="tel" placeholder="Teléfono de contacto 2" [disabled]="!formulario.value.contacto1" name="contacto2" [ngModel]="cargarcontactos().contacto2"  ></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-input type="tel" placeholder="Teléfono de contacto 3" required name="contacto3" [ngModel]="cargarcontactos().contacto3"  ></ion-input>
+      <ion-input type="tel" placeholder="Teléfono de contacto 3" [disabled]="!formulario.value.contacto2"  name="contacto3" [ngModel]="cargarcontactos().contacto3"  ></ion-input>
     </ion-item>
     <ion-item>
       <button ion-button block large type="submit" [disabled]="!formulario.valid" >Guardar</button>

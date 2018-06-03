@@ -58,20 +58,23 @@ export class ModalSosPage {
     let contacto2 = this.contactoS.obtenerContacto().contacto2;
     let contacto3 = this.contactoS.obtenerContacto().contacto3;
 
-    this.sms(contacto1,nombre,telefono);
-    this.sms(contacto2,nombre,telefono);
-    this.sms(contacto3,nombre,telefono);
+    var options={
+      replaceLineBreaks: false, 
+      android: {
+          intent: ''     
+       }
+         }
+
+    this.sms(contacto1,nombre,telefono,options);
+    this.sms(contacto2,nombre,telefono,options);
+    this.sms(contacto3,nombre,telefono,options);
  
 }
 
-sms(contacto:string,nombre:string,telefono:string){
-  var options={
-    replaceLineBreaks: false, 
-    android: {
-         intent: ''     
-      }
-}
-this.smsVar.send(contacto, nombre + " " + "(" + telefono + ")" + " "
+sms(contacto:string,nombre:string,telefono:string,options:{}){
+  if(contacto==null){
+    
+  this.smsVar.send(contacto, nombre + " " + "(" + telefono + ")" + " "
  + "se encuentra en peligro. Contactar urgentemente. Ubicacion: http://www.simcardmundi.com/mapaget.php?lat="+
                                     this.ubic.lat+"&log="+this.ubic.lng
                                                    ,options)
@@ -83,5 +86,7 @@ this.smsVar.send(contacto, nombre + " " + "(" + telefono + ")" + " "
                                      this.ubic.lat+"&log="+this.ubic.lng)
                                                  
 });
+
+}
 }
 }
