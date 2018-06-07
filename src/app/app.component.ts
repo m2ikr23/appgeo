@@ -13,19 +13,17 @@ export class MyApp {
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,public androidPermissions:AndroidPermissions) {
     platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      statusBar.styleDefault();
+    statusBar.styleDefault();
       splashScreen.hide();
-    this.permisoSms();
+   // this.permisoSms();
     });
   }
- permisoSms(){
+/* permisoSms(){
     this .androidPermissions.checkPermission(this.androidPermissions.PERMISSION.ACCESS_FINE_LOCATION)
     .then( success => console.log ( 'Permiso concedido' ), 
     err => this.androidPermissions.requestPermission( this.androidPermissions.PERMISSION.ACCESS_FINE_LOCATION) 
     ); 
 
-    this .androidPermissions.requestPermissions ([ this .androidPermissions.PERMISSION.ACCESS_FINE_LOCATION]);
-  }
+    this .androidPermissions.requestPermissions ([ this.androidPermissions.PERMISSION.ACCESS_FINE_LOCATION]);
+  }*/
 } 

@@ -41,7 +41,7 @@ export class ModalSosPage {
   }
 
   ObtenerUbic(){
-    this.geo.getCurrentPosition({timeout:10000})
+    this.geo.getCurrentPosition({timeout:6000})
                                   .then(info =>{
                                     this.ubic.lat = info.coords.latitude;
                                     this.ubic.lng = info.coords.longitude;

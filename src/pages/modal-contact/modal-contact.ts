@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, ViewController, NavParams } from 'ionic-angular';
+import { AlertController } from 'ionic-angular';
 import {NgForm} from '@angular/forms';
 
 import {EmailComposer} from '@ionic-native/email-composer'
@@ -19,7 +20,7 @@ export class ModalContactPage {
     mensaje:""
   }
 
-  constructor(public viewCtrl: ViewController, public navParams: NavParams, public emailCps:EmailComposer) {
+  constructor(public viewCtrl: ViewController, public navParams: NavParams, public emailCps:EmailComposer,public alertCtrl: AlertController) {
   
   }
 
@@ -37,7 +38,7 @@ public sendEmail(formulario : NgForm){
   this.emailCps.isAvailable().then((available: boolean) =>{
     if(available) {
       let email = {
-        to: 'm2ikr23@gmail.com',
+        to: 'franquicia@vigitrackavl.com',
         cc: this.contact.correo,
         bcc: [],
         attachments: [
@@ -56,10 +57,18 @@ public sendEmail(formulario : NgForm){
 
    });
    
-  
+ 
   this.dismiss();
   }
 
-
+  public presentAlert() {
+    let alert = this.alertCtrl.create({
+      title: '<img src="../../assets/imgs/logoA.png" >',
+      message: '<p align="center">www.arlisistem.com.ve</p><p align="center">gerencia@arlisistem.com.ve</p><p align="center">Desarrollado por Maiker Gutiérrez</p><p align="center">m2ikr23@gmail.com</p>',
+      buttons: ['ok']
+    });
+    alert.present();
+  }
+  
 
 }
