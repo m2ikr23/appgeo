@@ -39,7 +39,7 @@ export class ModalContactSosPage {
 
   cargarcontactos(){
     let fcontacto= this.contactoS.obtenerContacto()
-    if(fcontacto!=null){
+    if(fcontacto){
        return this.contactoS.obtenerContacto();
     }else{
       return "";

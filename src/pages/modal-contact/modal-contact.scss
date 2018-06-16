@@ -35,6 +35,16 @@ page-modal-contact {
         background-color: transparent;
     }
 
-
-    
+    page-modal-contact ion-item.redes-content {
+        margin: 21% 0px 7px 0px;
+    }
+    form.ng-untouched.ng-pristine.ng-invalid {
+        margin: 15% 0px;
+        
+    }
+    .item-md {
+        padding-left: 12px;
+        padding-right: 12px;
+       
+    }
 }
