@@ -86,16 +86,13 @@ export class ModalSosPage {
 sms(contacto:string,nombre:string,telefono:string,options:{}){
  
   this.smsVar.send(contacto, nombre + " " + "(" + telefono + ")" + " "
- + "se encuentra en peligro. Contactar urgentemente. Ubicacion: http://www.simcardmundi.com/mapaget.php?lat="+
+ + "se encuentra en peligro. Contactar urgentemente. Ubicación: http://www.simcardmundi.com/mapaget.php?lat="+
                                     this.ubic.lat+"&log="+this.ubic.lng
                                                    ,options)
 .then(()=>{
     
 },()=>{
-  console.log(contacto + nombre + " " + "(" + telefono + ")" + " "
-  + "se encuentra en peligro. Contactar urgentemente. Ubicacion: http://www.simcardmundi.com/mapaget.php?lat="+
-                                     this.ubic.lat+"&log="+this.ubic.lng)
-                                                 
+  console.log(contacto + nombre)
 });
 
 }
