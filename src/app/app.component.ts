@@ -15,7 +15,8 @@ export class MyApp {
     platform.ready().then(() => {
     statusBar.styleDefault();
       splashScreen.hide();
-    //this.permisoSms();
+    this.permisoSms();
+    this.permisoGeo();
     });
   }
   
