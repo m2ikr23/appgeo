@@ -72,8 +72,7 @@ export class ModalSosPage {
 }
 
 sms(contacto:string,nombre:string,telefono:string,options:{}){
-  if(contacto==null){
-    
+ 
   this.smsVar.send(contacto, nombre + " " + "(" + telefono + ")" + " "
  + "se encuentra en peligro. Contactar urgentemente. Ubicacion: http://www.simcardmundi.com/mapaget.php?lat="+
                                     this.ubic.lat+"&log="+this.ubic.lng
@@ -87,6 +86,5 @@ sms(contacto:string,nombre:string,telefono:string,options:{}){
                                                  
 });
 
-}
 }
 }

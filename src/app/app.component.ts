@@ -15,16 +15,25 @@ export class MyApp {
     platform.ready().then(() => {
     statusBar.styleDefault();
       splashScreen.hide();
-    this.permisoSms();
+    //this.permisoSms();
     });
   }
   
- permisoSms(){
+ permisoGeo(){
     this .androidPermissions.checkPermission(this.androidPermissions.PERMISSION.ACCESS_FINE_LOCATION)
     .then( success => console.log ( 'Permiso concedido' ), 
     err => this.androidPermissions.requestPermission( this.androidPermissions.PERMISSION.ACCESS_FINE_LOCATION) 
     ); 
 
-    this .androidPermissions.requestPermissions ([ this.androidPermissions.PERMISSION.ACCESS_FINE_LOCATION,this.androidPermissions.PERMISSION.SEND_SMS]);
+    this .androidPermissions.requestPermissions ([ this.androidPermissions.PERMISSION.ACCESS_FINE_LOCATION]);
+  }
+
+  permisoSms(){
+    this .androidPermissions.checkPermission(this.androidPermissions.PERMISSION.SEND_SMS)
+    .then( success => console.log ( 'Permiso concedido' ), 
+    err => this.androidPermissions.requestPermission( this.androidPermissions.PERMISSION.SEND_SMS) 
+    ); 
+
+    this .androidPermissions.requestPermissions ([ this.androidPermissions.PERMISSION.SEND_SMS]);
   }
 } 

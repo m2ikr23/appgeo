@@ -63,7 +63,7 @@ public sendEmail(formulario : NgForm){
 
   public presentAlert() {
     let alert = this.alertCtrl.create({
-      title: '<img src="../../assets/imgs/logoA.png" class="logo-cont">',
+      title: '<img src="assets/imgs/logoA.png" class="logo-cont">',
       message: '<p align="center">www.arlisistem.com.ve</p><p align="center">gerencia@arlisistem.com.ve</p><p align="center">Desarrollado por Maiker Gutiérrez</p><p align="center">m2ikr23@gmail.com</p>',
       buttons: ['ok']
     });
