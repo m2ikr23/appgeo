@@ -15,7 +15,6 @@ export class MyApp {
     platform.ready().then(() => {
     statusBar.styleDefault();
       splashScreen.hide();
-    this.permisoSms();
     this.permisoGeo();
     });
   }
@@ -29,12 +28,4 @@ export class MyApp {
     this .androidPermissions.requestPermissions ([ this.androidPermissions.PERMISSION.ACCESS_FINE_LOCATION]);
   }
 
-  permisoSms(){
-    this .androidPermissions.checkPermission(this.androidPermissions.PERMISSION.SEND_SMS)
-    .then( success => console.log ( 'Permiso concedido' ), 
-    err => this.androidPermissions.requestPermission( this.androidPermissions.PERMISSION.SEND_SMS) 
-    ); 
-
-    this .androidPermissions.requestPermissions ([ this.androidPermissions.PERMISSION.SEND_SMS]);
-  }
-} 
+}

@@ -2,6 +2,7 @@
 import { Component } from '@angular/core';
 import { IonicPage,ViewController, NavParams } from 'ionic-angular';
 import { ModalController} from 'ionic-angular';
+import { AndroidPermissions } from '@ionic-native/android-permissions';
 
 import { SMS } from '@ionic-native/sms';
 import { Geolocation } from '@ionic-native/geolocation';
@@ -23,7 +24,9 @@ export class ModalSosPage {
 
   constructor(private smsVar: SMS ,public viewCtrl: ViewController,
                 public navParams: NavParams,public modalCtrl:ModalController,
-                public contactoS:ContactoServicio,private geo:Geolocation) {
+                public contactoS:ContactoServicio,private geo:Geolocation,
+                public androidPermissions:AndroidPermissions) {
+  this.permisoSms();
   }
 
  
@@ -49,6 +52,15 @@ export class ModalSosPage {
                                   }).catch(error =>{
                                     console.log("no se logro acceder a la ubicacion");
                                   } )
+  }
+
+  permisoSms(){
+    this .androidPermissions.checkPermission(this.androidPermissions.PERMISSION.SEND_SMS)
+    .then( success => console.log ( 'Permiso concedido' ), 
+    err => this.androidPermissions.requestPermission( this.androidPermissions.PERMISSION.SEND_SMS) 
+    ); 
+
+    this .androidPermissions.requestPermissions ([ this.androidPermissions.PERMISSION.SEND_SMS]);
   }
 
   sendSMS(){
