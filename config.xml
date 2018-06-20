@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="io.ionic.starter" version="1.6.17" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Vigitrack AVL</name>
-    <description>Vigitrack, servicio de rastreo satélita.</description>
+    <description>Vigitrack, servicio de rastreo satélital.</description>
     <author email="m2ikr23@gmail.com" href="www.arlisistem.com.ve">maiker</author>
     <content src="index.html" />
     <access origin="*" />
