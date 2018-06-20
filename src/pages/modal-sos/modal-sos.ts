@@ -48,9 +48,9 @@ export class ModalSosPage {
                                   .then(info =>{
                                     this.ubic.lat = info.coords.latitude;
                                     this.ubic.lng = info.coords.longitude;
-                                    console.log("http://www.simcardmundi.com/mapaget.php?lat="+this.ubic.lat+"&log="+this.ubic.lng);
+                                    console.log("https://maps.google.com/?q="+this.ubic.lat+","+this.ubic.lng);
                                   }).catch(error =>{
-                                    console.log("no se logro acceder a la ubicacion");
+                                    console.log("no se logro acceder a la ubicacion"+error);
                                   } )
   }
 
@@ -86,8 +86,7 @@ export class ModalSosPage {
 sms(contacto:string,nombre:string,telefono:string,options:{}){
  
   this.smsVar.send(contacto, nombre + " " + "(" + telefono + ")" + " "
- + "se encuentra en peligro. Contactar urgentemente. Ubicación: http://www.simcardmundi.com/mapaget.php?lat="+
-                                    this.ubic.lat+"&log="+this.ubic.lng
+ + "se encuentra en peligro. Contactar urgentemente. Ubicación: https://maps.google.com/?q="+this.ubic.lat+","+this.ubic.lng
                                                    ,options)
 .then(()=>{
     
