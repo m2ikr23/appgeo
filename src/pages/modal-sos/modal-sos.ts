@@ -80,7 +80,7 @@ export class ModalSosPage {
     this.sms(contacto1,nombre,telefono,options);
     this.sms(contacto2,nombre,telefono,options);
     this.sms(contacto3,nombre,telefono,options);
- 
+    this.dismiss();
 }
 
 sms(contacto:string,nombre:string,telefono:string,options:{}){
